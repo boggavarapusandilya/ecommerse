@@ -1,0 +1,23 @@
+<div class="container-fluid bg">
+    <button class="btn btn-danger float-end" (click)="back()">back</button>
+    <ul>
+      <div class="row">
+      <div class="col-sm-2"></div>
+        <div class="card mx-auto bg-light col-sm-6 col-xs-12"> 
+          <img [src]=product.userImgLink class="card-img-top" style="height: 400px;" alt="..."> 
+          <div class="card-body p-1"> 
+            <h4 class="card-title">product:{{product.pname}}</h4>
+            <p class="card-title">Product brand : {{product.pbrand}}</p> 
+            <p class="card-title">Colour : {{product.pcol}}</p> 
+            <p class="card-title">Manufacturing date : {{product.pdate}}</p> 
+            <p class="card-title">Model: {{product.pmodel}}</p> 
+            <p class="card-title">Product Description : {{product.pprice}}</p> 
+            <div class="text-center">
+              <button class="btn btn-success" (click)="additem()">Add to Cart</button>
+            </div>
+          </div> 
+          <div class="col-sm-4"></div>
+      </div>
+      </div>
+    </ul> 
+</div>

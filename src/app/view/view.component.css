@@ -1,0 +1,17 @@
+html {
+    height: 100%;
+    margin: 0px;
+  }
+  
+  .bg {
+    /* The image used */
+    background-image: url("/assets/image-7.jpg");
+  
+    /* Full height */
+    height: 100%; 
+  
+  
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

@@ -1,0 +1,29 @@
+
+<div class="container-fluid bg">
+    <button class="btn btn-danger float-end" (click)="userLogout()">logout</button>
+    <p class="display-6 text-center" style="color:white">{{username}}`s cart</p>
+    
+
+    <div class="card mb-3 mx-auto" *ngFor="let h of cart;let i=index" style="max-width: 700px;max-height: 100%;">
+        <div class="row">
+          <div class="col-md-4">
+            <img [src]=h.productImgLink class="card-img-top" style="width: 100%;" alt="..."> 
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{h.productname}}</h5>
+              <p class="card-title">Product ID : {{h.productbrand}}</p> 
+              <p class="card-title">Colour : {{h.colour}}</p> 
+              <p class="card-title">Manufacturing date : {{h.model}}</p> 
+              <p class="card-title">Cost:{{h.price}}</p>  
+              <button class="btn btn-success" (click)="deletepro(i)">delete</button>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+</div>
+
+

@@ -1,0 +1,62 @@
+<div class="container" class="bg">
+    <nav class="navbar navbar-expand-sm "*ngIf="status">
+        <ul class="navbar-nav ms-auto" >
+            <li class="nav-item">
+                <h4 style="color: crimson;">{{logername}}</h4> 
+            </li>
+            <li class="nav-item px-3">
+                <button class="btn btn-danger float-end" (click)="viewcart()" style="background-color: rgb(231, 178, 99);">view cart</button> 
+            </li>
+            <li class="nav-item px-3">
+               <button class="btn btn-danger float-end" (click)="userLogout()">logout</button>
+            </li>
+            
+        </ul>
+    </nav>
+<br>
+<div class="container">
+    <carousel
+        [images]="images"
+        [objectFit]="'cover'"
+        [cellWidth]="'100%'"
+        [arrowsOutside]="true"
+        [autoplay]="true"
+        [dots]="true"
+        [loop]="true" style="height: 500px;">
+    </carousel>
+    <div class="container">
+    </div>
+ 
+    <div class="row row-cols-sm-4 col-xs-12 col-md-12 text-center g-5 pt-3 px-5" >
+        <div *ngFor="let i of listObj;let n=index"class="col card card-body bg mx-3" style="height:300px">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img [src]=i.userImgLink
+                    class="card-img-top" alt="..." height="100px" width="100%" style="border-radius: 50%;">
+
+                </div>
+                <div class="col-sm-8">
+                    <h5>Brand: {{i.pbrand}}</h5>
+                    <h5>product: {{i.pname}}</h5>
+                    <h5>model: {{i.pmodel}}</h5>
+                    <h4 style="color: crimson;"><span>&#8377;</span>{{i.pprice}}</h4>
+                    <h5>colour:{{i.pcol}}</h5>
+                    <button class="btn btn-danger" (click)="additems(n)" style="background-color: rgb(243, 168, 82);">Add to cart</button> 
+                    
+                    <button class="btn btn-success " (click)="viewitem(n)">view</button>
+
+                </div>
+                
+
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+    
+    </div>
+    
+        <router-outlet></router-outlet>
+    

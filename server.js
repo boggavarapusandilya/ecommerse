@@ -12,14 +12,14 @@ app.use(exp.static(path.join(__dirname,"./dist/microapp3")));
 
 
 //create api obj
-//const userApiObj=require("./apis/userapi")
+const userApiObj=require("./apis/userapi")
 //const productApiObj=require("./multipleapis/productapi")
-//const adminApiObj=require("./apis/adminapi")
+const adminApiObj=require("./apis/adminapi")
 
 //forward req objects to specific api based on path
-//app.use("/user",userApiObj)
+app.use("/user",userApiObj)
 //app.use("/product",productApiObj)
-//app.use("/admin",adminApiObj)
+app.use("/admin",adminApiObj)
 
 //database url
 const dburl=process.env.dburl;
@@ -31,7 +31,7 @@ mc.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true})
     const cardCollectionObj=databaseObj.collection("cardcollection");
     app.set("userCollectionObj", userCollectionObj);
     app.set("productCollectionObj",productCollectionObj)
-    app.set("adminCollectionObj",cardCollectionObj)
+    app.set("cardCollectionObj",cardCollectionObj)
     console.log("db is running successfully")
 
 })

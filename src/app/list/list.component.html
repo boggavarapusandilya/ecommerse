@@ -1,0 +1,26 @@
+<div class="container-fluid bg">
+<button class="btn btn-primary float-end" (click)="adminLogout()">logout</button>
+<br>
+<table class="table table border mt-4" style="height:600px">
+    <tr style="font-size: 1.2rem;">
+        <th>S.no</th>
+        <th>Product brand</th>
+        <th>Product name</th>
+        <th>product model no</th>
+        <th>Manufacturing date</th>
+        <th>Product colour</th>
+        <th>price</th>
+    </tr>
+    <tr *ngFor="let one of listObj; let ing=index"style="padding:20px;font-size:1rem">
+        <td>{{ing}}</td>
+        <td>{{one.pbrand}}</td>
+        <td>{{one.pname}}</td>
+        <td>{{one.pmodel}}</td>
+        <td>{{one.pdate}}</td>
+        <td>{{one.pcol}}</td>
+        <td>{{one.pprice}}</td>
+        <button class="btn btn-secondary" (click)="delete(ing)">Delete</button>
+       
+    </tr>
+</table>
+</div>

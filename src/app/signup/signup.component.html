@@ -1,0 +1,54 @@
+<div class="container-fluid bg">
+    <div class="row p-5">
+    <div class="col-sm-3"></div>
+<div class="card col-sm-6 col-xs-12" >
+    <div class="card-header">
+<p class="display-4 text-secondary text-center mt-3" style="font-size: 1.5rem;color: rgb(255, 0, 140);font-weight: 400;">User register</p>
+</div>
+<div style="background-image:url('/assets/image-7.jpg');">
+
+<form class="row g-3 mt-2 card-body"#formRef="ngForm" (ngSubmit)="formRef.form.valid&&onSubmit(formRef)">
+    <!-- username -->
+    <div class="col-12">
+        <label for="inputUsername" class="form-label">Username</label>
+        <input type="text" class="form-control" id="inputUsername" name="username" ngModel required #username="ngModel">
+        <!-- validation for username -->
+        <span class="text-danger" *ngIf="(username.touched || formRef.submitted) && username.errors?.required">
+            Username is required
+        </span>
+    </div>
+    <!-- username -->
+    <div class="col-12">
+        <label for="inputname" class="form-label">name</label>
+        <input type="text" class="form-control" id="inputname" name="name" ngModel required #name="ngModel">
+        <!-- validation for username -->
+        <span class="text-danger" *ngIf="(name.touched || formRef.submitted) && name.errors?.required">
+          name is required
+        </span>
+    </div>
+    <!-- password -->
+    <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Password</label>
+        <input type="password" class="form-control" id="inputPassword4" name="password" ngModel required
+            #password="ngModel">
+        <!-- validation for password -->
+        <span class="text-danger" *ngIf="(password.touched || formRef.submitted) && password.errors?.required">
+            Password is required
+        </span>
+    </div>
+
+    
+
+   
+    
+    
+
+   
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+</form>
+</div>
+</div>
+</div>
+</div>
